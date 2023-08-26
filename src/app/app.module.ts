@@ -10,6 +10,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LoginModule } from './modules/login/login.module';
 import { environment } from 'src/environments/environment.development';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDatetimeModule } from '@mat-datetimepicker/core';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { environment } from 'src/environments/environment.development';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatNativeDateModule,
+    MatNativeDatetimeModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({

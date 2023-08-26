@@ -1,1 +1,10 @@
-<p>match-modal works!</p>
+<div class="container">
+    <div class="header">
+        <h2>{{ data.name }}</h2>
+        <button (click)="closeDialog()">Close</button>
+    </div>
+    <div>
+        <p><strong>Start Date:</strong> {{ data.startDate | date: DATE_FORMAT }}</p>
+        <p><strong>Possible winner:</strong> {{data.possibleWinner}}</p>
+    </div>
+</div>

@@ -1,1 +1,27 @@
-<p>match works!</p>
+<div class="container">
+    <div class="logout-btn">
+        <button (click)="onLogout()">Log out</button>
+    </div>
+    <div class="group-container">
+        <div class="create-new">
+          <button (click)="onCreateMatchModal()">Add match</button>
+        </div>
+        <ng-container *ngFor="let dateGroup of matchesByDateKeys">
+            <div class="match-group" [appGroupColor]="matchesByDate[dateGroup]">
+          <h2>{{ dateGroup }}</h2>
+          <div *ngFor="let match of matchesByDate[dateGroup]" class="match-button">
+            <div class="match-name">
+              <button class="btn-style" (click)="openMatchModal(match)" [disabled]="match.isCompleted">
+                <strong>
+                    {{ match.name }}
+                </strong>
+              </button>
+              <button class="on-delete" *ngIf="match.isCompleted" (click)="onDelete(match.id)">delete</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+</div>
+
+

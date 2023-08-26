@@ -1,0 +1,69 @@
+.container {
+    margin: 10px;
+
+    .logout-btn {
+        display: flex;
+        justify-content: end;
+        cursor: pointer;
+        padding: 0px 15px;
+
+        button {
+            padding: 5px 10px;
+        }
+
+    }
+
+    .group-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      margin: 25px;
+    
+      .create-new {
+        max-width: 600px;
+        width: 100%;
+        margin: 15px;
+        cursor: pointer;
+    
+        button {
+          width: 100%;
+          border-radius: 10px;
+          padding: 15px;
+          font-weight: 600;
+        }
+      }
+    
+      .match-group {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #113654;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+      }
+    
+      .match-button {
+        margin-bottom: 10px;
+      }
+    }
+    
+    .match-name {
+      display: flex;
+      justify-content: space-between;
+
+      .on-delete {
+        margin-left: 10px;
+      }
+    }
+    
+    .btn-style {
+      width: 100%;
+      padding: 5px;
+      cursor: pointer;
+    }
+}
+

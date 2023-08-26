@@ -1,0 +1,47 @@
+<div class="center-items">
+    <mat-card>
+      <div class="header">
+        <h2>Match Lists</h2>
+      </div>
+      <form class="add-list" [formGroup]="form">
+        <mat-form-field>
+          <input
+            formControlName="name"
+            required
+            matInput
+            #name
+            placeholder="Name"
+          />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input
+            formControlName="possibleWinner"
+            matInput
+            #possibleWinner
+            placeholder="Possible winner"
+          />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Select Date and time</mat-label>
+          <input matInput #date formControlName="startDate" [matDatetimepicker]="dts" autocomplete="false">
+          <mat-datetimepicker-toggle [for]="dts" matSuffix></mat-datetimepicker-toggle>
+          <mat-datetimepicker #dts type="datetime"></mat-datetimepicker>
+        </mat-form-field>
+  
+        <div class="button-position">
+          <button
+            [disabled]="!form.valid"
+            mat-raised-button
+            color="primary"
+            (click)="
+              onCreateMatch(name.value, date.value, possibleWinner.value)
+            "
+          >
+            Create
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>

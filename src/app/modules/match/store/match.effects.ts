@@ -13,7 +13,7 @@ export class MatchEffects {
       ofType(MatchesActions.loadMatches),
       mergeMap(() =>
         this.matchService.fetchMatches().pipe(
-          map((todos) => MatchesActions.loadMatchesSuccess({ matches: todos })),
+          map((matches) => MatchesActions.loadMatchesSuccess({ matches: matches })),
           catchError((error) =>
             of(MatchesActions.loadMatchesFailure({ error: error.message }))
           )
@@ -25,9 +25,9 @@ export class MatchEffects {
   addMatch$ = createEffect(() =>
     this.actions$.pipe(
       ofType(MatchesActions.addMatch),
-      mergeMap(({ match: todo }) =>
-        this.matchService.addMatch(todo).pipe(
-          map((addedTodo) => MatchesActions.addMatchSuccess({ match: addedTodo })),
+      mergeMap(({ match: matches }) =>
+        this.matchService.addMatch(matches).pipe(
+          map((addedMatch) => MatchesActions.addMatchSuccess({ match: addedMatch })),
           catchError((error) =>
             of(MatchesActions.addMatchFailure({ error: error.message }))
           )
@@ -41,8 +41,8 @@ export class MatchEffects {
       ofType(MatchesActions.updateMatch),
       mergeMap(({ id, isCompleted }) =>
         this.matchService.updateMatchStatus(id, isCompleted).pipe(
-          map((updatedTodo) =>
-            MatchesActions.updateMatchSuccess({ match: updatedTodo })
+          map((updatedMatch) =>
+            MatchesActions.updateMatchSuccess({ match: updatedMatch })
           ),
           catchError((error) =>
             of(MatchesActions.updateMatchFailure({ error: error.message }))

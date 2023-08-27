@@ -10,6 +10,7 @@ import { DateFormat, Match } from '../../store/match.model';
 export class MatchModalComponent {
   DATE_FORMAT = DateFormat.DATE;
   nameStatus: { [name: string]: { opened: boolean, past: boolean } } = {};
+  
   constructor(@Inject(MAT_DIALOG_DATA) public data: Match, public dialogRef: MatDialogRef<MatchModalComponent>) {}
 
   closeDialog(): void {

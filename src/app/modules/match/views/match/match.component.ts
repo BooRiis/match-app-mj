@@ -4,8 +4,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Match } from '../../store/match.model';
 import { MatDialog } from '@angular/material/dialog';
 import { MatchModalComponent } from '../../components/match-modal/match-modal.component';
-import { CreateMatchComponent } from '../create-match/create-match.component';
-import { Subject, distinctUntilChanged, take } from 'rxjs';
+import { CreateMatchComponent } from '../../components/create-match/create-match.component';
 
 @UntilDestroy()
 @Component({
@@ -54,7 +53,7 @@ export class MatchComponent {
     const groupDate = this.getGroupDateForMatchId(match.id);
     if (groupDate) {
       const groupCreationDate = new Date(groupDate);
-      const currentDate = new Date(); // Current date
+      const currentDate = new Date();
 
       // Determine if the group is older or newer than the current date
       const isGroupInPast = groupCreationDate < currentDate;
@@ -125,7 +124,7 @@ export class MatchComponent {
 
     this.matchesByDate = { ...this.matchesByDate, ...updatedMatchesByDate };
   }
-  
+
   private getGroupDateForMatchId(id: string): string | undefined {
     for (const groupDate of this.matchesByDateKeys) {
       const groupMatches = this.matchesByDate[groupDate];
@@ -158,8 +157,7 @@ export class MatchComponent {
     this.matchFacade.deleteMatch(id);
   }
 
-   onLogout(): void {
-     this.matchFacade.logout();
-   }
-
+  onLogout(): void {
+    this.matchFacade.logout();
+  }
 }

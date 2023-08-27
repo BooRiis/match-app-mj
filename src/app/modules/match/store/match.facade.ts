@@ -8,7 +8,6 @@ import {
   selectMatchesLoading,
 } from './match.selectors';
 import { logout } from './match.actions';
-import { take } from 'rxjs';
 
 @Injectable()
 export class MatchFacade {

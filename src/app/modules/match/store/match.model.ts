@@ -13,5 +13,5 @@ export interface Match {
 }
 
 export enum DateFormat {
-  DATE = 'dd.MM.YYYY, hh:mm',
+  DATE = 'dd.MM.YYYY, hh:mm a',
 }
